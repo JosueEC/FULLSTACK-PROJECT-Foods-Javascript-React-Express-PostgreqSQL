@@ -1,8 +1,8 @@
-const { Router } = require('express');
+const { Router } = require('express')
 
 const DietController = require('../controllers/diet-controllers/Diet.controller')
 
-const router = Router();
+const router = Router()
 
 router.use('/', DietController)
 

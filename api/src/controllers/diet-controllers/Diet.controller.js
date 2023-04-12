@@ -1,4 +1,4 @@
-const readDiets = async(req, res) => {
+const readDiets = async (req, res) => {
 
 }
 

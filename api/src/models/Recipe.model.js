@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize')
 
 module.exports = (database) => {
   database.define('Recipe', {
@@ -50,8 +50,8 @@ module.exports = (database) => {
       allowNull: false,
       defaultValue: 0
     }
-  }, 
+  },
   {
     timestamps: false
-  });
-};
+  })
+}
