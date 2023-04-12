@@ -37,12 +37,12 @@ module.exports = (database) => {
       type: DataTypes.SMALLINT,
       allowNull: false
     },
-    creaditsText: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     servings: {
       type: DataTypes.SMALLINT,
+      allowNull: false
+    },
+    creaditsText: {
+      type: DataTypes.STRING,
       allowNull: false
     },
     likes: {
