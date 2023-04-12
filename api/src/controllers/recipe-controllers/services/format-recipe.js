@@ -1,7 +1,4 @@
-// Refactorizar esta funcion para que pueda trabajar con varias
-// recipes en 1 arreglo y tambien cuando solo sea una Recipe
-
-const formatRecipe = (recipe) => {
+const formatSingleRecipe = (recipe) => {
   const ingredients = formatIngredients(recipe.extendedIngredients)
   const diets = formatDiets(recipe)
 
@@ -16,8 +13,34 @@ const formatRecipe = (recipe) => {
     diets,
     preparationMinutes: recipe.preparationMinutes,
     servings: recipe.servings,
-    creditsText: recipe.creditsText,
-    likes: recipe.likes
+    creditsText: recipe.creditsText
+  }
+
+  return newFormat
+}
+
+const formatElementArrayRecipe = (recipe) => {
+  const diets = formatDiets(recipe)
+
+  const newFormat = {
+    id: recipe.id,
+    title: recipe.title,
+    image: recipe.image,
+    healthScore: recipe.healthScore,
+    diets,
+    preparationMinutes: recipe.preparationMinutes,
+    servings: recipe.servings,
+    creditsText: recipe.creditsText
+  }
+  return newFormat
+}
+
+const formatArrayRecipes = (arrayRecipes) => {
+  const newFormat = []
+
+  for (let i = 0; i < arrayRecipes.results.length; i++) {
+    const recipe = formatElementArrayRecipe(arrayRecipes.results[i])
+    newFormat.push(recipe)
   }
 
   return newFormat
@@ -53,4 +76,7 @@ const formatDiets = ({ diets, vegetarian, vegan, glutenFree }) => {
   return diets
 }
 
-module.exports = formatRecipe
+module.exports = {
+  formatSingleRecipe,
+  formatArrayRecipes
+}

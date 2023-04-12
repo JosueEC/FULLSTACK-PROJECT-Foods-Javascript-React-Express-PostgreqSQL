@@ -2,7 +2,7 @@
 // la API o de nuestra BD
 
 // const Recipe = require('../../../db')
-const formatRecipe = require('./format-recipe')
+const { formatSingleRecipe } = require('./format-recipe')
 
 const { URL_BASE } = require('../../../utilities/paths')
 const fetch = require('node-fetch')
@@ -15,7 +15,7 @@ const readRecipeID = async (idRecipe) => {
       return data
     })
 
-  const newFormatRecipe = formatRecipe(recipe)
+  const newFormatRecipe = formatSingleRecipe(recipe)
 
   return newFormatRecipe
 }
