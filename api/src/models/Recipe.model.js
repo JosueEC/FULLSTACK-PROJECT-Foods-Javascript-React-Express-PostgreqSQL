@@ -45,15 +45,13 @@ module.exports = (database) => {
       type: DataTypes.SMALLINT,
       allowNull: false
     },
-    favorite: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false
-    },
     likes: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
     }
+  }, 
+  {
+    timestamps: false
   });
 };
