@@ -6,7 +6,7 @@ const router = Router()
 
 // recipes
 // recipes/?name=''
-// router.get('/', RecipeController.readRecipeByID);
+router.get('/', RecipeController.readRecipes)
 
 // recipe/idRecipe
 router.get('/:idRecipe', RecipeController.readRecipeByID)

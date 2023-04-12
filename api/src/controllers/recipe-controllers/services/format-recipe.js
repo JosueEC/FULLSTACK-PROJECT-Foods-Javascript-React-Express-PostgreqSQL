@@ -3,6 +3,7 @@
 
 const formatRecipe = (recipe) => {
   const ingredients = formatIngredients(recipe.extendedIngredients)
+  const diets = formatDiets(recipe)
 
   const newFormat = {
     id: recipe.id,
@@ -12,6 +13,7 @@ const formatRecipe = (recipe) => {
     healthScore: recipe.healthScore,
     instructions: recipe.instructions,
     ingredients,
+    diets,
     preparationMinutes: recipe.preparationMinutes,
     servings: recipe.servings,
     creditsText: recipe.creditsText,
@@ -33,6 +35,22 @@ const formatIngredients = (ingredients) => {
   }
 
   return newFormat
+}
+
+const formatDiets = ({ diets, vegetarian, vegan, glutenFree }) => {
+  if (vegetarian) {
+    if (!diets.includes('vegetarian')) diets.push('vegetarian')
+  }
+
+  if (vegan) {
+    if (!diets.includes('vegan')) diets.push('vegan')
+  }
+
+  if (glutenFree) {
+    if (!diets.includes('gluten free')) diets.push('glutenFree')
+  }
+
+  return diets
 }
 
 module.exports = formatRecipe
