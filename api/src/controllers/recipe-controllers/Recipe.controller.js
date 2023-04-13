@@ -2,9 +2,11 @@ const readRecipeID = require('./services/read-recipe-ID')
 const readAllRecipes = require('./services/read-all-recipes')
 const readRecipesQuery = require('./services/read-recipes-query')
 const readRecipesAllInfo = require('./services/read-recipes-all-info')
+const createRecipeInDatabase = require('./services/create-recipe-DB')
 
-// http://localhost:3001/recipes --> 100 recipes general info
-// http://localhost:3001/recipes?name=pasta --> 100 recipes by name general info
+// (GET)
+// (QUERY) http://localhost:3001/recipes --> 100 recipes general info
+// (PARAMS) http://localhost:3001/recipes?name=pasta --> 100 recipes by name general info
 const readRecipes = async (req, res) => {
   try {
     const { name } = req.query
@@ -19,7 +21,7 @@ const readRecipes = async (req, res) => {
   }
 }
 
-// http://localhost:3001/recipes/addInformation --> 100 recipes all info
+// (GET) http://localhost:3001/recipes/addInformation --> 100 recipes all info
 const readRecipesAddInfo = async (req, res) => {
   try {
     const recipes = await readRecipesAllInfo()
@@ -30,7 +32,7 @@ const readRecipesAddInfo = async (req, res) => {
   }
 }
 
-// http://localhost:3001/recipes/715497 --> Recipe y ID all info
+// (GET) http://localhost:3001/recipes/715497 --> Recipe y ID all info
 const readRecipeByID = async (req, res) => {
   try {
     const { idRecipe } = req.params
@@ -42,8 +44,45 @@ const readRecipeByID = async (req, res) => {
   }
 }
 
+// (POST) http://localhost:3001/recipes
+const createRecipe = async (req, res) => {
+  try {
+    const {
+      title,
+      image,
+      summary,
+      healthScore,
+      instructions,
+      ingredients,
+      preparationMinutes,
+      servings,
+      creditsText,
+      likes,
+      diets
+    } = req.body
+    const newDataRecipe = {
+      title,
+      image,
+      summary,
+      healthScore,
+      instructions,
+      ingredients,
+      preparationMinutes,
+      servings,
+      creditsText,
+      likes,
+      diets
+    }
+    const createdRecipe = await createRecipeInDatabase(newDataRecipe)
+    res.status(200).json(createdRecipe)
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
+}
+
 module.exports = {
   readRecipeByID,
   readRecipesAddInfo,
-  readRecipes
+  readRecipes,
+  createRecipe
 }

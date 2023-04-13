@@ -41,7 +41,7 @@ module.exports = (database) => {
       type: DataTypes.SMALLINT,
       allowNull: false
     },
-    creaditsText: {
+    creditsText: {
       type: DataTypes.STRING,
       allowNull: false
     },

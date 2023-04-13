@@ -4,7 +4,6 @@ const readRecipesAllInfo = require('../../recipe-controllers/services/read-recip
 
 const getDiets = async () => {
   const dietsInDatabase = await Diet.findAll()
-  console.log(dietsInDatabase)
 
   if (dietsInDatabase.length !== 0) return dietsInDatabase
 

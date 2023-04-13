@@ -4,8 +4,8 @@ module.exports = (database) => {
   database.define('Diet', {
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      primaryKey: true
     },
     name: {
       type: DataTypes.STRING,

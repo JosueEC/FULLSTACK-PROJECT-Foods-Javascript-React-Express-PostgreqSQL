@@ -4,6 +4,6 @@ const DietController = require('../controllers/diet-controllers/Diet.controller'
 
 const router = Router()
 
-router.use('/', DietController)
+router.get('/', DietController)
 
 module.exports = router
