@@ -1,6 +1,9 @@
 // Agregar una funcion para que verifique si se busca una recipe de
 // la API o de nuestra BD
 
+require('dotenv').config()
+// const { API_KEY } = process.env
+
 // const Recipe = require('../../../db')
 const { formatSingleRecipe } = require('./format-recipe')
 
@@ -8,7 +11,7 @@ const { URL_BASE } = require('../../../utilities/paths')
 const fetch = require('node-fetch')
 
 const readRecipeID = async (idRecipe) => {
-  // const recipe = await fetch(`${URL_BASE}/${idRecipe}/information?apiKey=32e16dcf530b4f03be6e02111512d6f6&includeNutrition=false`)
+  // const recipe = await fetch(`${URL_BASE}/${idRecipe}/information?${API_KEY}&includeNutrition=false`)
   const recipe = await fetch(`${URL_BASE}/${idRecipe}/information`)
     .then((response) => response.json())
     .then((data) => {
