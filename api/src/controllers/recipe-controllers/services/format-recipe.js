@@ -78,5 +78,6 @@ const formatDiets = ({ diets, vegetarian, vegan, glutenFree }) => {
 
 module.exports = {
   formatSingleRecipe,
-  formatArrayRecipes
+  formatArrayRecipes,
+  formatDiets
 }
