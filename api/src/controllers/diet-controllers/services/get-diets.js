@@ -1,17 +1,17 @@
-// Verificar si diets esta vacia, si no hay que obtener las dietas
-// y crearlas en la BD, si ya existe solo hay que devolverlas
-//
-// Obtener 100 recetas de la API externa
-//
-// Filtrar las 100 recetas para obtener solo las dietas
-//
-// Devolver las dietas
+const { Diet } = require('../../../db')
+
 const readRecipesAllInfo = require('../../recipe-controllers/services/read-recipes-all-info')
 
 const getDiets = async () => {
-  const recipes = await readRecipesAllInfo()
+  const dietsInDatabase = await Diet.findAll()
+  console.log(dietsInDatabase)
 
+  if (dietsInDatabase.length !== 0) return dietsInDatabase
+
+  const recipes = await readRecipesAllInfo()
   const diets = filterDietsFromRecipes(recipes)
+
+  insertDietsInDatabase(diets)
 
   return diets
 }
@@ -37,6 +37,13 @@ const getDietsFromSet = (dietsSet) => {
   }
 
   return items
+}
+
+const insertDietsInDatabase = async (diets) => {
+  for (let i = 0; i < diets.length; i++) {
+    const nameDiet = diets[i]
+    await Diet.create({ name: nameDiet })
+  }
 }
 
 module.exports = getDiets
