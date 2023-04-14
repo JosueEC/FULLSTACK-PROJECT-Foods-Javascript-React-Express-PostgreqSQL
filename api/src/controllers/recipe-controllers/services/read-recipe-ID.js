@@ -1,7 +1,7 @@
 require('dotenv').config()
 // const { API_KEY } = process.env
 
-const { Recipe } = require('../../../db')
+const { Recipe, Diet } = require('../../../db')
 const { formatSingleRecipe } = require('./format-recipe')
 
 const { URL_BASE } = require('../../../utilities/paths')
@@ -34,7 +34,15 @@ async function getInfoRecipeFromAPI (idRecipeAPI) {
 }
 
 async function getInfoRecipeFromDatabase (idRecipeDatabase) {
-  const recipe = await Recipe.findByPk(idRecipeDatabase)
+  const recipe = await Recipe.findByPk(idRecipeDatabase, {
+    include: {
+      model: Diet,
+      attributes: ['name'],
+      through: {
+        attributes: []
+      }
+    }
+  })
   return recipe
 }
 
