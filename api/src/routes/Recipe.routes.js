@@ -13,6 +13,7 @@ router.get('/addInformation', RecipeController.readRecipesAddInfo)
 // recipe/idRecipe
 router.get('/:idRecipe', RecipeController.readRecipeByID)
 
+// recipes
 router.post('/', RecipeController.createRecipe)
 
 module.exports = router

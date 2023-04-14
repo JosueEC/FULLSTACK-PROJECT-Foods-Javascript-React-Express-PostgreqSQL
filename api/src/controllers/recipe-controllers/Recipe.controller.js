@@ -5,8 +5,8 @@ const readRecipesAllInfo = require('./services/read-recipes-all-info')
 const createRecipeInDatabase = require('./services/create-recipe-DB')
 
 // (GET)
-// (QUERY) http://localhost:3001/recipes --> 100 recipes general info
-// (PARAMS) http://localhost:3001/recipes?name=pasta --> 100 recipes by name general info
+// (ALL) http://localhost:3001/recipes --> 100 recipes general info
+// (QUERY) http://localhost:3001/recipes?name=pasta --> 100 recipes by name general info
 const readRecipes = async (req, res) => {
   try {
     const { name } = req.query
@@ -32,7 +32,7 @@ const readRecipesAddInfo = async (req, res) => {
   }
 }
 
-// (GET) http://localhost:3001/recipes/715497 --> Recipe y ID all info
+// (GET) http://localhost:3001/recipes/715497 --> Recipe by ID all info
 const readRecipeByID = async (req, res) => {
   try {
     const { idRecipe } = req.params
