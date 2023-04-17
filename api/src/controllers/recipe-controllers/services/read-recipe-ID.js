@@ -21,7 +21,8 @@ function validarId (id) {
 }
 
 async function getInfoRecipeFromAPI (idRecipeAPI) {
-  // const recipe = await fetch(`${URL_BASE}/${idRecipe}/information?$apiKey={API_KEY}&includeNutrition=false`)
+  // https://api.spoonacular.com/recipes/${idRecipeAPI}/information?apiKey=32e16dcf530b4f03be6e02111512d6f6&includeNutrition=false
+  // const recipe = await fetch(`${URL_BASE}/${idRecipeAPI}/information?apiKey=${API_KEY}&includeNutrition=false`)
   const recipe = await fetch(`${URL_BASE}/${idRecipeAPI}/information`)
     .then((response) => response.json())
     .then((data) => {
