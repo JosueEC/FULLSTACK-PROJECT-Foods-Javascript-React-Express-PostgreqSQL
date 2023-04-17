@@ -14,10 +14,12 @@ const createRecipeInDatabase = async (newDataRecipe) => {
     likes,
     diets
   } = newDataRecipe
-  const adaptedTitle = title.toUpperCase()
+  const adaptedTitle = title.toLowerCase()
+  const adaptedCreditsText = creditsText.toLowerCase()
+
   const createdRecipe = await Recipe.create(
     {
-      adaptedTitle,
+      title: adaptedTitle,
       image,
       summary,
       healthScore,
@@ -25,7 +27,7 @@ const createRecipeInDatabase = async (newDataRecipe) => {
       ingredients,
       preparationMinutes,
       servings,
-      creditsText,
+      creditsText: adaptedCreditsText,
       likes
     }
   )

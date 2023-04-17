@@ -15,9 +15,9 @@ const readRecipes = async (req, res) => {
       ? await readRecipesQuery(name)
       : await readAllRecipes()
 
-    res.status(200).json(recipes)
+    res.status(200).send({ status: 'OK', data: recipes })
   } catch (error) {
-    res.status(400).json({ error: error.message })
+    res.status(400).send({ status: 'FAILED', error: error.message })
   }
 }
 
@@ -28,7 +28,7 @@ const readRecipesAddInfo = async (req, res) => {
 
     res.status(200).json(recipes)
   } catch (error) {
-    res.status(400).json({ error: error.message })
+    res.status(400).send({ status: 'FAILED', error: error.message })
   }
 }
 
@@ -38,9 +38,9 @@ const readRecipeByID = async (req, res) => {
     const { idRecipe } = req.params
 
     const recipe = await readRecipeID(idRecipe)
-    res.status(200).json(recipe)
+    res.status(200).send({ status: 'OK', data: recipe })
   } catch (error) {
-    res.status(400).json({ error: error.message })
+    res.status(400).send({ status: 'FAILED', error: error.message })
   }
 }
 
@@ -60,6 +60,7 @@ const createRecipe = async (req, res) => {
       likes,
       diets
     } = req.body
+
     const newDataRecipe = {
       title,
       image,
@@ -73,10 +74,11 @@ const createRecipe = async (req, res) => {
       likes,
       diets
     }
+
     const createdRecipe = await createRecipeInDatabase(newDataRecipe)
-    res.status(200).json(createdRecipe)
+    res.status(201).send({ status: 'OK', data: createdRecipe })
   } catch (error) {
-    res.status(400).json({ error: error.message })
+    res.status(400).send({ status: 'FAILED', error: error.message })
   }
 }
 

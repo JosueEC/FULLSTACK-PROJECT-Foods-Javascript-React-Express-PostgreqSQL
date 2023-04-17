@@ -12,7 +12,7 @@ const readAllRecipes = async () => {
       return data
     })
 
-  return recipes
+  return recipes.results
 }
 
 module.exports = readAllRecipes
