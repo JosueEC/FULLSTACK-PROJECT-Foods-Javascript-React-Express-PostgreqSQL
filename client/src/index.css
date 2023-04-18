@@ -58,3 +58,9 @@ code {
     padding-bottom: 2rem;
   }
 }
+
+@media (max-width: 450px) {
+  html {
+    font-size: 49%;
+  }
+}
