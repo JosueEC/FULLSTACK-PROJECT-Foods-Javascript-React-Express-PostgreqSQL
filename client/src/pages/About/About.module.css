@@ -1,0 +1,85 @@
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .8rem 3rem;
+  border-radius: 5rem;
+  background: var(--degradado);
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  transition: all .3s linear;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.heading {
+  text-align: center;
+  background: var(--verde);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.acercaDe {
+  background: url('./assets/fondo-about.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 3rem;
+}
+
+.acercaDe .columna {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.acercaDe .columna .image {
+  flex: 1 1 40rem;
+}
+
+.acercaDe .columna .image img {
+  width: 100%;
+}
+
+.acercaDe .columna .content {
+  flex: 1 1 40rem;
+}
+
+.acercaDe .columna .content h3 {
+  font-size: 3rem;
+  color: #333;
+}
+
+.acercaDe .columna .content p {
+  font-size: 1.5rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+.acercaDe .columna .content .buttons a:last-child {
+  margin-left: 2rem;
+}
+
+@media (max-width: 820px) {
+  .acercaDe {
+    background-position: right;
+  }
+}
+
+@media (max-width: 450px) {
+  .acercaDe .columna .content .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .acercaDe .columna .content .buttons a:last-child {
+    margin: 1rem 0;
+  }
+}

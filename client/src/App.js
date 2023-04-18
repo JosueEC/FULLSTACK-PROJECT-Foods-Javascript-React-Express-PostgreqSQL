@@ -4,6 +4,7 @@ import Home from './pages/Home/Home'
 import ContainerCardsDiet from './components/ContainerCardsDiet/ContainerCardsDiet';
 import Contact from './pages/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import About from './pages/About/About';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Home />
       <ContainerCardsDiet />
+      <About />
       <Contact />
       <Footer />
     </div>
