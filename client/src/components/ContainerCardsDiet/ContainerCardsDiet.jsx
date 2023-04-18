@@ -6,7 +6,7 @@ import styles from './ContainerCardsDiet.module.css'
 export default function ContainerCardsDiet () {
   return (
     <section className={styles.detalles} id='detalles'>
-      <h1 className='heading'>RECIPES</h1>
+      <h1 className={styles.heading}>RECIPES</h1>
       <div className={styles.cajaContenedor}>
         <CardDiet />
         <CardDiet />

@@ -1,3 +1,14 @@
+.heading {
+  text-align: center;
+  background: var(--verde);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
 .detalles .cajaContenedor {
   display: flex;
   align-items: center;
