@@ -5,24 +5,45 @@
   border: 0.1rem solid rgba(0,0,0,.2);
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
   margin: 1.5rem;
-  padding: 3rem 2rem;
+  padding: 3rem 7rem;
   border-radius: .5rem;
-  text-align: center;
+  text-align: left;
   transition: .2s linear;
 }
 
 .caja img {
-  height: 15rem;
+  height: 25rem;
+  border-radius: .5rem;
 }
 
 .caja h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #333;
   padding-top: 1rem;
 }
 
 .caja p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #666;
   padding: .1rem 0;
+}
+
+@media (max-width: 1240px) {
+  .caja {
+    text-align: left;
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 912px) {
+  .caja {
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .caja {
+    text-align: left;
+    padding: 3rem 6rem;
+  }
 }
