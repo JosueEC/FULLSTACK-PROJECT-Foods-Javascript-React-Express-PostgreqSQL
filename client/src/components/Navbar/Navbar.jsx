@@ -1,23 +1,24 @@
-import styles from './Navbar.module.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import styles from './Navbar.module.css'
+
+import * as route from '../../utilities/routePages'
 
 export default function Navbar () {
   return (
     <header>
-      <a href='#inicio' className={styles.logo}>
+      <Link to={route.pathHome} className={styles.logo}>
         <span>WHAT</span> To Cook
-      </a>
+      </Link>
       
       <input type='checkbox' id='menu-bar' />
       <label htmlFor='menu-bar' className='fa fa-bars'></label>
 
       <nav className={styles.navbar}>
-        <a href='#inicio'>home</a>
-        <a href='#detalles'>details</a>
-        <a href='#acerca_de'>about us</a>
-        <a href='#opiniones'>opinions</a>
-        <a href='#precios'>prices</a>
-        <a href='#contactos'>contact</a>
+        <Link to={route.pathHome} className={styles.link} >home</Link>
+        <Link to={route.pathAbout} className={styles.link} >about us</Link>
+        <Link to={route.pathContact} className={styles.link} >contact</Link>
       </nav>
     </header>
   )

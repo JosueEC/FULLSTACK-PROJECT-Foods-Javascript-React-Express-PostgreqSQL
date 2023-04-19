@@ -21,7 +21,9 @@ header .logo span {
   color: var(--limon);
 }
 
-header .navbar a {
+/* ///////////////////////////////////////// */
+
+header .navbar .link {
   font-size: 1.8rem;
   margin-left: 2rem;
   color: var(--verde);
@@ -29,7 +31,7 @@ header .navbar a {
   border-radius: 5px;
 }
 
-header .navbar a:hover {
+header .navbar .link:hover {
   color: white;
   background: var(--verde);
 }
