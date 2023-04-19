@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Navbar from './components/Navbar/Navbar'
+import ContainerCardsDiet from './components/ContainerCardsDiet/ContainerCardsDiet'
 
 import Home from './pages/Home/Home'
 import Contact from './pages/Contact/Contact';
@@ -16,6 +17,10 @@ function App() {
         <Route
           path={route.pathHome}
           element={<Home />}
+        />
+        <Route 
+          path={route.pathRecipes}
+          element={<ContainerCardsDiet />}
         />
         <Route 
           path={route.pathAbout}

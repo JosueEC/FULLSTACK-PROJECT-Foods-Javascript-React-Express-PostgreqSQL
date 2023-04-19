@@ -17,8 +17,9 @@ export default function Navbar () {
 
       <nav className={styles.navbar}>
         <Link to={route.pathHome} className={styles.link} >home</Link>
-        <Link to={route.pathAbout} className={styles.link} >about us</Link>
-        <Link to={route.pathContact} className={styles.link} >contact</Link>
+        <Link to={route.pathRecipes} className={styles.link} >Recipes</Link>
+        <Link to={route.pathAbout} className={styles.link} >About Us</Link>
+        <Link to={route.pathContact} className={styles.link} >Contact</Link>
       </nav>
     </header>
   )
