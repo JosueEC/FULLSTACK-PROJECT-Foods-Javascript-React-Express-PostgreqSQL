@@ -8,6 +8,7 @@ const router = Router()
 // recipes/?name=''
 router.get('/', RecipeController.readRecipes)
 
+// recipes all info
 router.get('/addInformation', RecipeController.readRecipesAddInfo)
 
 // recipe/idRecipe
