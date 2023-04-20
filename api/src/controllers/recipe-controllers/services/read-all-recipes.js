@@ -28,7 +28,7 @@ const getRecipesFromAPI = async () => {
 
 const getRecipesFromDatabase = async () => {
   const recipes = await Recipe.findAll({
-    attributes: ['id', 'image', 'creditsText']
+    attributes: ['id', 'title', 'image', 'creditsText']
   })
 
   return recipes
