@@ -2,9 +2,9 @@ import { React, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getRecipes } from '../../redux/actions'
 
-import CardDiet from '../CardDiet/CardDiet'
-
 import styles from './ContainerCardsDiet.module.css'
+import CardDiet from '../CardDiet/CardDiet'
+import SearchBar from '../SearchBar/SearchBar'
 
 export default function ContainerCardsDiet () {
   const recipes = useSelector(state => state.recipes)
@@ -17,6 +17,7 @@ export default function ContainerCardsDiet () {
   return (
     <section className={styles.detalles} id='detalles'>
       <h1 className={styles.heading}>RECIPES</h1>
+      <SearchBar />
       <div className={styles.cajaContenedor}>
       {
         recipes.map(({ id, title, image, healthScore, diets, preparationMinutes, servings }) => {

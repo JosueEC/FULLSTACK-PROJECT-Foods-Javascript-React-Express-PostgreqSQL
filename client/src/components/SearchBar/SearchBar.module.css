@@ -1,0 +1,35 @@
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.searchContainer {
+  margin: 1em 0;
+}
+
+.searchContainer input {
+  background-color: transparent;
+  width: 40%;
+  border-bottom: 2px solid var(--limon);
+  padding: 1em 0.3em;
+  color: #666;
+}
+
+.searchContainer input:focus {
+  border-bottom-color: var(--verde);
+}
+
+.buttonValue {
+  border: 2px solid var(--verde);
+  padding: .8rem 3rem;
+  border-radius: 3em;
+  background-color: transparent;
+  color: #666;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #6759ff;
+  color: #fff;
+}
