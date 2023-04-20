@@ -4,6 +4,12 @@
   --verde: #e85d04;
   --limon: #faa307;
   --degradado: linear-gradient(90deg, var(--limon), var(--verde));
+
+  --primary-color: #90e0ef;
+  --secondary-color: #00b4d5;
+  --tertiary-color: #0077b6;
+  --yellow-color: #ffb900;
+  --gray-color: #808080;
 }
 
 * {

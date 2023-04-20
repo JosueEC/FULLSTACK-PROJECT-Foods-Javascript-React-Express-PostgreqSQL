@@ -6,6 +6,7 @@ import ContainerCardsDiet from './components/ContainerCardsDiet/ContainerCardsDi
 import Home from './pages/Home/Home'
 import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
+import Details from './pages/Details/Details';
 
 import * as route from './utilities/routePages'
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Details />
       <Routes>
         <Route
           path={route.pathHome}
