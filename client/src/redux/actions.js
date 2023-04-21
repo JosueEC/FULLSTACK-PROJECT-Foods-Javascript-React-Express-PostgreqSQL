@@ -22,7 +22,6 @@ const getRecipesQuery = (query) => {
     fetch(URL)
       .then((response) => response.json())
       .then((results) => {
-        console.log(results.data);
         dispatch({ type: GET_RECIPES_QUERY, payload: results.data});
       })
   }

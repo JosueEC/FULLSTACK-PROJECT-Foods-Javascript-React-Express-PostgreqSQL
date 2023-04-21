@@ -1,4 +1,4 @@
-const pathHome = '/home'
+const pathHome = '/'
 const pathRecipes = '/recipes'
 const pathContact = '/contact'
 const pathAbout = '/about'
