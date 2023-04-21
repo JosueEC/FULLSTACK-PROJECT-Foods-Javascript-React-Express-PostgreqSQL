@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import ContainerCardsDiet from './components/ContainerCardsDiet/ContainerCardsDiet'
 
 import Home from './pages/Home/Home'
+import Details from './pages/Details/Details'
 import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
 
@@ -21,6 +22,10 @@ function App() {
         <Route 
           path={route.pathRecipes}
           element={<ContainerCardsDiet />}
+        />
+        <Route 
+          path={route.pathDetails}
+          element={<Details />}
         />
         <Route 
           path={route.pathAbout}
