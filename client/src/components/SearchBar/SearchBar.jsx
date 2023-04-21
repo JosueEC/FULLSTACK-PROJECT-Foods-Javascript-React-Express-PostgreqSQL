@@ -14,6 +14,7 @@ export default function SearchBar () {
   }
 
   function handleClick (event) {
+    console.log('Target: ', event.target.name)
     dispatch(getRecipesQuery(query));
   }
 
@@ -21,14 +22,14 @@ export default function SearchBar () {
     <div className={styles.wrapper}>
       <div className={styles.searchContainer}>
         <input type='search' className={styles.searchInput} placeholder='Search recipe name here' onChange={ handleChange } />
-        <button onClick={ handleClick } className={styles.btn}>Search</button>
+        <button onClick={ handleClick } name='btnSearch' className={styles.btn}>Search</button>
       </div>
       <div className={styles.buttons}>
-        <button className={styles.buttonValue}>All Recipes</button>
-        <button className={styles.buttonValue}>Vegan</button>
-        <button className={styles.buttonValue}>Ketogenic</button>
-        <button className={styles.buttonValue}>Vegetarian</button>
-        <button className={styles.buttonValue}>Primal</button>
+        <button className={styles.buttonValue} name='btnAllRecipes'>All Recipes</button>
+        <button className={styles.buttonValue} name='btnVegan'>Vegan</button>
+        <button className={styles.buttonValue} name='btnKetogenic'>Ketogenic</button>
+        <button className={styles.buttonValue} name='btnVegetarian'>Vegetarian</button>
+        <button className={styles.buttonValue} name='btnPrimal'>Primal</button>
       </div>
     </div>
   )

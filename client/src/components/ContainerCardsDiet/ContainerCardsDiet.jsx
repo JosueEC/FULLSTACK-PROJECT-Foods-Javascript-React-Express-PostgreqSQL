@@ -20,7 +20,8 @@ export default function ContainerCardsDiet () {
       <SearchBar />
       <div className={styles.cajaContenedor}>
       {
-        recipes.map(({ id, title, image, creditsText }) => {
+        recipes? (
+          recipes.map(({ id, title, image, creditsText }) => {
           return <CardDiet 
             key={id}
             id={id}
@@ -29,6 +30,9 @@ export default function ContainerCardsDiet () {
             creditsText={creditsText}
           />
         })
+        ): (
+          <h2>Loading...</h2>
+        )
       }
       </div>
     </section>
