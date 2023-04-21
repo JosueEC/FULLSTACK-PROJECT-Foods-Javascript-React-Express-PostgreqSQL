@@ -8,7 +8,20 @@
   padding: 3rem 2rem;
   border-radius: .5rem;
   text-align: left;
+  animation: fadeIn 1s ease 0s 1 normal forwards;
   transition: .2s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .caja img {
@@ -29,3 +42,4 @@
   color: #666;
   padding: .1rem 0;
 }
+
