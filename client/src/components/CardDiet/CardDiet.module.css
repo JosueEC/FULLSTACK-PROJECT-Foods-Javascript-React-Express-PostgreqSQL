@@ -1,11 +1,11 @@
 .caja {
-  flex: 1 1 30rem;
+  flex: 0 0 5rem;
   background: white;
   border-radius: .5rem;
   border: 0.1rem solid rgba(0,0,0,.2);
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
   margin: 1.5rem;
-  padding: 3rem 7rem;
+  padding: 3rem 2rem;
   border-radius: .5rem;
   text-align: left;
   transition: .2s linear;
@@ -14,6 +14,8 @@
 .caja img {
   height: 25rem;
   border-radius: .5rem;
+  width: 312px;
+  height: 231px;
 }
 
 .caja h3 {
@@ -26,24 +28,4 @@
   font-size: 1.3rem;
   color: #666;
   padding: .1rem 0;
-}
-
-@media (max-width: 1240px) {
-  .caja {
-    text-align: left;
-    padding: 3rem 2rem;
-  }
-}
-
-@media (max-width: 912px) {
-  .caja {
-    text-align: center;
-  }
-}
-
-@media (max-width: 450px) {
-  .caja {
-    text-align: left;
-    padding: 3rem 6rem;
-  }
 }

@@ -9,9 +9,14 @@
   padding: 1rem;
 }
 
+.detalles {
+  padding-left: 0;
+}
+
 .detalles .cajaContenedor {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100vw;
 }

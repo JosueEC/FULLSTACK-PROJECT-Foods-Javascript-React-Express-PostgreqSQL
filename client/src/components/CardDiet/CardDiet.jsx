@@ -4,15 +4,17 @@ import Button from '../Button/Button'
 // import imgFood from './assets/gluten-free.jpg'
 import styles from './CardDiet.module.css'
 
-export default function CardDiet ({ id, title, image, healthScore, diets, preparationMinutes, servings }) {
+export default function CardDiet ({ id, title, image, creditsText }) {
   return (
     <div className={styles.caja} key={id}>
-      <img src={image} alt='food' />
+      <div className={styles.containerImage}>
+        <img src={image} alt='food' />
+      </div>
       <h3>{title}</h3>
-      <p>Health Score: {healthScore}</p>
-      <p>Preparation Minutes: {preparationMinutes}</p>
-      <p>Servings: {servings}</p>
-      <p>Diets: {diets.join(', ')}</p>
+      {
+        creditsText && <p>Credits Text: { creditsText }</p>
+      }
+      
       <Button />
     </div>
   )

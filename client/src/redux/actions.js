@@ -9,8 +9,8 @@ const getRecipes = () => {
   return function (dispatch) {
     fetch(URL)
       .then((response) => response.json())
-      .then((data) => {
-        dispatch({ type: GET_RECIPES, payload: data})
+      .then((results) => {
+        dispatch({ type: GET_RECIPES, payload: results.data})
       })
   }
 }
@@ -23,7 +23,7 @@ const getRecipesQuery = (query) => {
       .then((response) => response.json())
       .then((results) => {
         console.log(results.data);
-        // dispatch({ type: GET_RECIPES_QUERY, payload: results.data});
+        dispatch({ type: GET_RECIPES_QUERY, payload: results.data});
       })
   }
 }
