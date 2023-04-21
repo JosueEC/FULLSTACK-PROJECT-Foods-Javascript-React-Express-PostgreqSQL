@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getRecipesQuery } from '../../redux/actions'
+import { getRecipesQuery, getRecipes } from '../../redux/actions'
 
 import styles from './SearchBar.module.css'
 
@@ -14,8 +14,13 @@ export default function SearchBar () {
   }
 
   function handleClick (event) {
-    console.log('Target: ', event.target.name)
-    dispatch(getRecipesQuery(query));
+    switch (event.target.name) {
+      case 'btnSearch':
+        dispatch(getRecipesQuery(query));
+        break
+      default:
+        dispatch(getRecipes())
+    }
   }
 
   return (
@@ -25,11 +30,18 @@ export default function SearchBar () {
         <button onClick={ handleClick } name='btnSearch' className={styles.btn}>Search</button>
       </div>
       <div className={styles.buttons}>
-        <button className={styles.buttonValue} name='btnAllRecipes'>All Recipes</button>
-        <button className={styles.buttonValue} name='btnVegan'>Vegan</button>
-        <button className={styles.buttonValue} name='btnKetogenic'>Ketogenic</button>
-        <button className={styles.buttonValue} name='btnVegetarian'>Vegetarian</button>
-        <button className={styles.buttonValue} name='btnPrimal'>Primal</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnAllRecipes'>All Recipes</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnGlutenFree'>Gluten Free</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnKetogenic'>Ketogenic</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnVegetarian'>Vegetarian</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnLactoVegetarian'>Lacto-vegetarian</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnOvoVegetarian'>Ovo-vegetarian</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnVegan'>Vegan</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnPescetarian'>Pescetarian</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnPaleo'>Paleo</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnPrimal'>Primal</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnLowFoodmap'>Low food map</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnWhole'>Whole30</button>
       </div>
     </div>
   )

@@ -29,8 +29,13 @@
   cursor: pointer;
 }
 
+.buttonValue:hover {
+  background-color: var(--limon);
+  color: white;
+}
+
 .active {
-  background-color: #6759ff;
+  background-color: var(--limon);
   color: #fff;
 }
 

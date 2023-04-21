@@ -16,6 +16,7 @@ export default function Details () {
         console.log('Recipe Details: ', results.data)
         setRecipe(results.data)
       })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
