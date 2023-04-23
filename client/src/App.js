@@ -7,6 +7,7 @@ import Home from './pages/Home/Home'
 import Details from './pages/Details/Details'
 import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
+import FormRecipe from './pages/FormRecipe/FormRecipe'
 
 import * as route from './utilities/routePages'
 
@@ -26,6 +27,10 @@ function App() {
         <Route 
           path={route.pathDetails}
           element={<Details />}
+        />
+        <Route 
+          path={route.pathFormRecipe}
+          element={<FormRecipe />}
         />
         <Route 
           path={route.pathAbout}
