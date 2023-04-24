@@ -1,4 +1,4 @@
-const readRecipeID = require('./services/read-recipe-ID')
+const readRecipeID = require('./services/getRecipeID/read-recipe-ID')
 const readAllRecipes = require('./services/read-all-recipes')
 const readRecipesQuery = require('./services/read-recipes-query')
 const readRecipesAllInfo = require('./services/getAllInfoRecipes/read-recipes')

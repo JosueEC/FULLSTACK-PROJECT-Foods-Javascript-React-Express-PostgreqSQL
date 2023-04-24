@@ -1,15 +1,37 @@
 const { Recipe, Diet } = require('../../../../../db')
+const { Op } = require('sequelize')
 
-const getRecipesFromDatabase = async () => {
-  const recipes = await Recipe.findAll({
-    include: {
-      model: Diet,
-      attributes: ['name'],
-      through: {
-        attributes: []
-      }
-    }
-  })
+const getRecipesFromDatabase = async (query, value) => {
+  let recipes = []
+  switch (query) {
+    case 'name':
+      recipes = await Recipe.findAll({
+        where: {
+          title: {
+            [Op.iLike]: `%${value}%`
+          }
+        },
+        include: {
+          model: Diet,
+          attributes: ['name'],
+          through: {
+            attributes: []
+          }
+        }
+      })
+      break
+    default:
+      recipes = await Recipe.findAll({
+        include: {
+          model: Diet,
+          attributes: ['name'],
+          through: {
+            attributes: []
+          }
+        }
+      })
+      break
+  }
 
   const newFormat = formatRecipesDatabase(recipes)
   return newFormat

@@ -1,10 +1,10 @@
 require('dotenv').config()
 // const { API_KEY } = process.env
 
-const { Recipe, Diet } = require('../../../db')
-const { formatSingleRecipe } = require('./format-recipe')
+const { Recipe, Diet } = require('../../../../db')
+const { formatSingleRecipe } = require('../format-recipe')
 
-const { URL_BASE } = require('../../../utilities/paths')
+const { URL_BASE } = require('../../../../utilities/paths')
 const fetch = require('node-fetch')
 
 const readRecipeID = async (idRecipe) => {
