@@ -1,7 +1,7 @@
 const readRecipeID = require('./services/read-recipe-ID')
 const readAllRecipes = require('./services/read-all-recipes')
 const readRecipesQuery = require('./services/read-recipes-query')
-const readRecipesAllInfo = require('./services/read-recipes-all-info')
+const readRecipesAllInfo = require('./services/getAllInfoRecipes/read-recipes')
 const createRecipeInDatabase = require('./services/create-recipe-DB')
 
 // (GET)
@@ -22,9 +22,13 @@ const readRecipes = async (req, res) => {
 }
 
 // (GET) http://localhost:3001/recipes/addInformation --> 100 recipes all info
+// (GET) http://localhost:3001/recipes/addInformation?name=pasta --> 100 Recipes all info by Query name
 const readRecipesAddInfo = async (req, res) => {
   try {
-    const recipes = await readRecipesAllInfo()
+    const { name } = req.query
+    const recipes = (name)
+      ? await readRecipesAllInfo('name', name)
+      : await readRecipesAllInfo()
 
     res.status(200).json(recipes)
   } catch (error) {
@@ -44,7 +48,7 @@ const readRecipeByID = async (req, res) => {
   }
 }
 
-// (POST) http://localhost:3001/recipes
+// (POST) http://localhost:3001/recipes -->Create Recipe
 const createRecipe = async (req, res) => {
   try {
     const {

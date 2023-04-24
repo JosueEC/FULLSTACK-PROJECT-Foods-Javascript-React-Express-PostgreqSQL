@@ -19,23 +19,8 @@ const formatSingleRecipe = (recipe) => {
   return newFormat
 }
 
-const formatElementArrayRecipe = (recipe) => {
-  const diets = formatDiets(recipe)
-
-  const newFormat = {
-    id: recipe.id,
-    title: recipe.title,
-    image: recipe.image,
-    healthScore: recipe.healthScore,
-    diets,
-    preparationMinutes: recipe.preparationMinutes,
-    servings: recipe.servings,
-    creditsText: recipe.creditsText
-  }
-  return newFormat
-}
-
 const formatArrayRecipes = (arrayRecipes) => {
+  console.log(arrayRecipes, 'formatArrayRecipes:')
   const newFormat = []
 
   for (let i = 0; i < arrayRecipes.results.length; i++) {
@@ -43,6 +28,26 @@ const formatArrayRecipes = (arrayRecipes) => {
     newFormat.push(recipe)
   }
 
+  return newFormat
+}
+
+const formatElementArrayRecipe = (recipe) => {
+  const ingredients = formatIngredients(recipe.analyzedInstructions)
+  const diets = formatDiets(recipe)
+
+  const newFormat = {
+    id: recipe.id,
+    title: recipe.title,
+    image: recipe.image,
+    summary: recipe.summary,
+    healthScore: recipe.healthScore,
+    instructions: recipe.instructions,
+    ingredients,
+    diets,
+    preparationMinutes: recipe.preparationMinutes,
+    servings: recipe.servings,
+    creditsText: recipe.creditsText
+  }
   return newFormat
 }
 

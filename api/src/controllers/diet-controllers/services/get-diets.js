@@ -1,6 +1,6 @@
 const { Diet } = require('../../../db')
 
-const readRecipesAllInfo = require('../../recipe-controllers/services/read-recipes-all-info')
+const readRecipesAllInfo = require('../../recipe-controllers/services/getAllInfoRecipes/read-recipes')
 
 const getDiets = async () => {
   const dietsInDatabase = await Diet.findAll()
