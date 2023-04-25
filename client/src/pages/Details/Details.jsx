@@ -13,7 +13,7 @@ export default function Details () {
     fetch(`${BASE_URL}/recipes/${recipeID}`)
       .then((response) => response.json())
       .then((results) => {
-        console.log('Recipe Details: ', results.data)
+        console.log('fetch-details-recipe')
         setRecipe(results.data)
       })
   // eslint-disable-next-line react-hooks/exhaustive-deps
