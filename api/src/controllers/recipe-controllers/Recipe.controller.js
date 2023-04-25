@@ -1,6 +1,5 @@
 const readRecipeID = require('./services/getRecipeID/read-recipe-ID')
 const readAllRecipes = require('./services/getGeneralRecipes/read-all-recipes')
-const readRecipesQuery = require('./services/getGeneralRecipes/read-recipes-query')
 const readRecipesAllInfo = require('./services/getAllInfoRecipes/read-recipes')
 const createRecipeInDatabase = require('./services/create-recipe-DB')
 
@@ -12,7 +11,7 @@ const readRecipes = async (req, res) => {
     const { name } = req.query
 
     const recipes = (name)
-      ? await readRecipesQuery(name)
+      ? await readAllRecipes('name', name)
       : await readAllRecipes()
 
     res.status(200).send({ status: 'OK', data: recipes })
