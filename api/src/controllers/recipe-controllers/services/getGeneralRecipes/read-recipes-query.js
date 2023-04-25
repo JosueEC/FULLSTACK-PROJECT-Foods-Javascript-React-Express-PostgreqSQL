@@ -2,9 +2,9 @@ require('dotenv').config()
 const { Op } = require('sequelize')
 // const { API_KEY } = process.env
 
-const { Recipe } = require('../../../db')
+const { Recipe } = require('../../../../db')
 
-const { URL_BASE } = require('../../../utilities/paths')
+const { URL_BASE } = require('../../../../utilities/paths')
 const fetch = require('node-fetch')
 
 const readRecipesQuery = async (name) => {

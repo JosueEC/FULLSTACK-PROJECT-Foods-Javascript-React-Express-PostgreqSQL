@@ -1,6 +1,6 @@
 const readRecipeID = require('./services/getRecipeID/read-recipe-ID')
-const readAllRecipes = require('./services/read-all-recipes')
-const readRecipesQuery = require('./services/read-recipes-query')
+const readAllRecipes = require('./services/getGeneralRecipes/read-all-recipes')
+const readRecipesQuery = require('./services/getGeneralRecipes/read-recipes-query')
 const readRecipesAllInfo = require('./services/getAllInfoRecipes/read-recipes')
 const createRecipeInDatabase = require('./services/create-recipe-DB')
 
