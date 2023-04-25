@@ -1,13 +1,15 @@
 const { Diet } = require('../../../db')
 
-const readRecipesAllInfo = require('../../recipe-controllers/services/getAllInfoRecipes/read-recipes')
+const { URL_BASE } = require('../../../utilities/paths')
+const { getRecipesFromAPI } = require('../../recipe-controllers/services/getAllInfoRecipes/services/get-recipes-API')
 
 const getDiets = async () => {
   const dietsInDatabase = await Diet.findAll()
 
   if (dietsInDatabase.length !== 0) return dietsInDatabase
 
-  const recipes = await readRecipesAllInfo()
+  // https://api.spoonacular.com/recipes/complexSearch?apiKey=32e16dcf530b4f03be6e02111512d6f6&addRecipeInformation=true&includeNutrition=false&number=100
+  const recipes = await getRecipesFromAPI(`${URL_BASE}/complexSearch/masterRecipes`)
   const diets = filterDietsFromRecipes(recipes)
 
   insertDietsInDatabase(diets)
