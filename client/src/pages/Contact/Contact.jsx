@@ -24,7 +24,7 @@ export default function Contact () {
           <textarea required name='' id='' cols={30} rows={10}></textarea>
           <label htmlFor=''>message</label>
         </div>
-        <Button />
+        <Button textButton='Send'/>
       </form>
     </section>
   )

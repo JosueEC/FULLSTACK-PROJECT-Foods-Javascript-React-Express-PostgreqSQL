@@ -16,7 +16,7 @@ export default function CardDiet ({ id, title, image, diets }) {
         {
           diets && <p>Diets: { diets.join(', ') }</p>
         }
-        <Button />
+        <Button textButton='More Details' />
       </div>
     </Link>
   )
