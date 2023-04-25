@@ -1,18 +1,30 @@
-import { GET_RECIPES, GET_RECIPES_QUERY } from "./actions";
+import { FILTER_RECIPE_DIET, GET_RECIPES, GET_RECIPES_QUERY } from "./actions";
 
 const initialState = {
-  recipes : []
+  recipes : [],
+  auxRecipes: []
 }
 
 const rootReducer = (state=initialState, action) => {
   switch (action.type) {
     case GET_RECIPES:
       return {
-        recipes: action.payload
+        ...state,
+        recipes: action.payload,
+        auxRecipes: action.payload
       }
     case GET_RECIPES_QUERY:
       return {
-        recipes: action.payload
+        ...state,
+        recipes: action.payload,
+        auxRecipes: action.payload
+      }
+    case FILTER_RECIPE_DIET:
+      return {
+        ...state,
+        recipes: state.auxRecipes.filter(recipes => {
+          return recipes.diets.includes(action.payload)
+        })
       }
     default:
       return {
