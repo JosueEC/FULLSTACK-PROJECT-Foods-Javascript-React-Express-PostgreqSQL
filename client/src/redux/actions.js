@@ -17,7 +17,7 @@ const getRecipes = () => {
 }
 
 const getRecipesQuery = (query) => {
-  const URL = `${BASE_URL}/recipes?name=${query}`;
+  const URL = `${BASE_URL}/recipes/addInformation?name=${query}`;
 
   return function (dispatch) {
     fetch(URL)
