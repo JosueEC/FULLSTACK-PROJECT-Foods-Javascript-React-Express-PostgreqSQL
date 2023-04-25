@@ -5,7 +5,7 @@ export const GET_RECIPES_QUERY = 'GET_RECIPES_QUERY';
 export const POST_RECIPE = 'POST_RECIPE';
 
 const getRecipes = () => {
-  const URL = `${BASE_URL}/recipes`
+  const URL = `${BASE_URL}/recipes/addInformation`
 
   return function (dispatch) {
     fetch(URL)

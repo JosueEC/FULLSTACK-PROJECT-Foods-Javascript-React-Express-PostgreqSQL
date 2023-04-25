@@ -29,7 +29,7 @@ const readRecipesAddInfo = async (req, res) => {
       ? await readRecipesAllInfo('name', name)
       : await readRecipesAllInfo()
 
-    res.status(200).json(recipes)
+    res.status(200).send({ status: 'OK', data: recipes })
   } catch (error) {
     res.status(400).send({ status: 'FAILED', error: error.message })
   }

@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 
 import styles from './CardDiet.module.css'
 
-export default function CardDiet ({ id, title, image, creditsText }) {
+export default function CardDiet ({ id, title, image, diets }) {
   return (
     <Link to={`/details/${id}`}>
-      <div className={styles.caja} key={id}>
+      <div className={styles.caja} key={ id }>
         <div className={styles.containerImage}>
-          <img src={image} alt='food' />
+          <img src={ image } alt='food' />
         </div>
-        <h3>{title}</h3>
+        <h3>{ title }</h3>
         {
-          creditsText && <p>Credits Text: { creditsText }</p>
+          diets && <p>Diets: { diets.join(', ') }</p>
         }
         <Button />
       </div>

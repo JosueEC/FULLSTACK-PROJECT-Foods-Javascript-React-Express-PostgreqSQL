@@ -21,12 +21,13 @@ export default function ContainerCardsDiet () {
       <div className={styles.cajaContenedor}>
       {
         recipes? (
-          recipes.map(({ id, title, image, creditsText }) => {
+          recipes.map(({ id, title, image, diets, creditsText }) => {
           return <CardDiet 
             key={id}
             id={id}
             title={title}
             image={image}
+            diets={diets}
             creditsText={creditsText}
           />
         })
