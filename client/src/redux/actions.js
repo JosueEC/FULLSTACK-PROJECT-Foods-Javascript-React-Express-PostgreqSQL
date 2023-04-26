@@ -26,7 +26,7 @@ const getRecipesQuery = (query) => {
       .then((response) => response.json())
       .then((results) => {
         console.log('fetch-all-info-recipes-query')
-        dispatch({ type: GET_RECIPES_QUERY, payload: results.data});
+        dispatch({ type: GET_RECIPES_QUERY, payload: { data: results.data, query: query }});
       })
   }
 }

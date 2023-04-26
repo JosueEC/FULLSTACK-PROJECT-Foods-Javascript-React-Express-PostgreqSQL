@@ -18,6 +18,9 @@ export default function SearchBar () {
       case 'btnSearch':
         dispatch(getRecipesQuery(query));
         break
+      case 'btnAllRecipes':
+        dispatch(getRecipes())
+        break
       case 'btnGlutenFree':
         dispatch(filterRecipesDiet('gluten free'))
         break

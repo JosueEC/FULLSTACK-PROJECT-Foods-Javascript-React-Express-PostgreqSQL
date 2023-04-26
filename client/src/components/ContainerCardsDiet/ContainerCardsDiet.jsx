@@ -8,10 +8,13 @@ import SearchBar from '../SearchBar/SearchBar'
 
 export default function ContainerCardsDiet () {
   const recipes = useSelector(state => state.recipes)
+  const { query, diets } = useSelector(state => state.results)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getRecipes())
+    if (recipes.length === 0){
+      dispatch(getRecipes())
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -19,6 +22,7 @@ export default function ContainerCardsDiet () {
     <section className={styles.detalles} id='detalles'>
       <h1 className={styles.heading}>RECIPES</h1>
       <SearchBar />
+      <label className={styles.labelResults}>{ `Results for ${query} - ${diets}` }</label>
       <div className={styles.cajaContenedor}>
       {
         recipes? (

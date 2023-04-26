@@ -20,3 +20,9 @@
   flex-wrap: wrap;
   width: 100vw;
 }
+
+.detalles .labelResults {
+  font-size: 1.5rem;
+  color: #666;
+  margin-left: 5rem;
+}
