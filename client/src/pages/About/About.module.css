@@ -42,6 +42,19 @@
 
 .acercaDe .columna .image {
   flex: 1 1 40rem;
+  animation: fadeInLeft 1s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 .acercaDe .columna .image img {
@@ -50,6 +63,19 @@
 
 .acercaDe .columna .content {
   flex: 1 1 40rem;
+  animation: fadeInRigth 1s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInRigth {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 .acercaDe .columna .content h3 {
