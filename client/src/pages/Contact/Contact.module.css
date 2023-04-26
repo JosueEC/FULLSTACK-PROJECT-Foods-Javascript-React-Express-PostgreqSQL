@@ -19,6 +19,19 @@
 
 .contactos .image {
   flex: 1 1 40rem;
+  animation: fadeInLeft 1s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 .contactos .image img {
@@ -33,6 +46,19 @@
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
   border-radius: .5rem;
   background: white;
+  animation: fadeInRigth 1s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInRigth {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 .contactos .heading {
