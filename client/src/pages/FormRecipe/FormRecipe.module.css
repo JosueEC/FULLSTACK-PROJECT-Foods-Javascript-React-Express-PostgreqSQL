@@ -19,6 +19,19 @@
 
 .formRecipe .image {
   flex: 1 1 40rem;
+  animation: fadeInLeft 1s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 .formRecipe .image img {
@@ -34,6 +47,19 @@
   border-radius: .5rem;
   background: white;
   cursor: pointer;
+  animation: fadeInRight 1s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
 
 .formRecipe .heading {
