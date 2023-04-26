@@ -13,7 +13,7 @@ export default function Home () {
       <div className={styles.content}>
         <h3>WHAT TO COOK</h3>
         <span>all your food. one place.</span>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eum necessitatibus expedita fugit atque, ut, esse non quaerat cum architecto exercitationem a eos adipisci doloribus velit temporibus nisi mollitia delectus. </p>
+        <p>Explore more than 5,000 recipes of all kinds, search for recipes by name or by type of diet, and even create your own recipes.</p>
         <Link to={pathRecipes}><Button textButton='Lets Start'/></Link>
       </div>
       <div className={styles.image}>

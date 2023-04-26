@@ -161,8 +161,8 @@ export default function FormRecipe () {
       <form onSubmit={handleSubmit}>
         <h1 className={styles.heading}>New Recipe</h1>
         <div className={styles.inputcaja}>
-          <input type='text' name='title' onChange={handleChange} required/>
-          <label htmlFor=''>Title Recipe</label>
+          <input type='text' name='title' id='title' onChange={handleChange} required/>
+          <label htmlFor='title'>Title Recipe</label>
         </div>
           {
             (errors.title)? (
@@ -172,8 +172,8 @@ export default function FormRecipe () {
             )
           }
         <div className={styles.inputcaja}>
-          <input type='text' name='image' onChange={handleChange} required/>
-          <label htmlFor=''>image</label>
+          <input type='text' name='image' id='image' onChange={handleChange} required/>
+          <label htmlFor='image'>image</label>
         </div>
         {
           (errors.image)? (
@@ -183,8 +183,8 @@ export default function FormRecipe () {
           )
         }
         <div className={styles.inputcaja}>
-          <input type='number' name='healthScore' onChange={handleChange} required/>
-          <label htmlFor=''>HealthScore</label>
+          <input type='number' name='healthScore' id='healthScore' onChange={handleChange} required/>
+          <label htmlFor='healthScore'>HealthScore</label>
         </div>
         {
           (errors.healthScore)? (
@@ -193,56 +193,60 @@ export default function FormRecipe () {
             <></>
           )
         }
-        <div className={styles.checkboxCaja}>
-          <div className="styles.formCheck">
+        <div className={styles.containerCheckbox}>
+        <div className={styles.containerColumn}>
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="glutenfree" value={1} onChange={handleCheck} />
-            <label htmlFor="glutenfree">Gluten Free</label>
+            <label htmlFor="glutenfree" className={styles.labelCheck} >Gluten Free</label>
           </div>
-          <div className="styles.formCheck">
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="dairyfree" value={2} onChange={handleCheck} />
-            <label htmlFor="dairyfree">Dairy Free</label>
+            <label htmlFor="dairyfree" className={styles.labelCheck} >Dairy Free</label>
           </div>
-          <div className="styles.formCheck">
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="lacto-ovo-vegetarian" value={3} onChange={handleCheck} />
-            <label htmlFor="lacto-ovo-vegetarian">Lacto ovo vegetarian</label>
+            <label htmlFor="lacto-ovo-vegetarian" className={styles.labelCheck} >Lacto ovo vegetarian</label>
           </div>
-          <div className="styles.formCheck">
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="vegan" value={4} onChange={handleCheck} />
-            <label htmlFor="vegan">Vegan</label>
+            <label htmlFor="vegan" className={styles.labelCheck} >Vegan</label>
           </div>
-          <div className="styles.formCheck">
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="vegetarian" value={5} onChange={handleCheck} />
-            <label htmlFor="vegetarian">Vegetarian</label>
+            <label htmlFor="vegetarian" className={styles.labelCheck} >Vegetarian</label>
           </div>
-          <div className="styles.formCheck">
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="paleolithic" value={6} onChange={handleCheck} />
-            <label htmlFor="paleolithic">Paleolithic</label>
+            <label htmlFor="paleolithic" className={styles.labelCheck} >Paleolithic</label>
           </div>
-          <div className="styles.formCheck">
+        </div>
+        <div className={styles.containerColumn}>
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="primal" value={7} onChange={handleCheck} />
-            <label htmlFor="primal">Primal</label>
+            <label htmlFor="primal" className={styles.labelCheck} >Primal</label>
           </div>
-          <div className="styles.formCheck">
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="whole30" value={8} onChange={handleCheck} />
-            <label htmlFor="whole30">Whole30</label>
+            <label htmlFor="whole30" className={styles.labelCheck} >Whole30</label>
           </div>
-          <div className="styles.formCheck">
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="pescatarian" value={9} onChange={handleCheck} />
-            <label htmlFor="pescatarian">Pescatarian</label>
+            <label htmlFor="pescatarian" className={styles.labelCheck} >Pescatarian</label>
           </div>
-          <div className="styles.formCheck">
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="ketogenic" value={10} onChange={handleCheck} />
-            <label htmlFor="ketogenic">Ketogenic</label>
+            <label htmlFor="ketogenic" className={styles.labelCheck} >Ketogenic</label>
           </div>
-          <div className="styles.formCheck">
+          <div className={styles.itemCheck}>
             <input type="checkbox" id="fodmapfriendly" value={11} onChange={handleCheck} />
-            <label htmlFor="fodmapfriendly">Fodmap Friendly</label>
+            <label htmlFor="fodmapfriendly" className={styles.labelCheck} >Fodmap Friendly</label>
           </div>
+        </div>
         </div>
           
           <div className={styles.inputcaja}>
-            <input type='number' name='preparationMinutes' onChange={handleChange} required/>
-            <label htmlFor=''>Preparation Minutes</label>
+            <input type='number' name='preparationMinutes' id='preparationMinutes' onChange={handleChange} required/>
+            <label htmlFor='preparationMinutes'>Preparation Minutes</label>
           </div>
         {
           (errors.preparationMinutes)? (
@@ -252,8 +256,8 @@ export default function FormRecipe () {
           )
         }
         <div className={styles.inputcaja}>
-          <input type='number' name='servings' onChange={handleChange} required/>
-          <label htmlFor=''>Servings</label>
+          <input type='number' name='servings' id='servings' onChange={handleChange} required/>
+          <label htmlFor='servings'>Servings</label>
         </div>
         {
           (errors.servings)? (
@@ -263,8 +267,8 @@ export default function FormRecipe () {
           )
         }
         <div className={styles.inputcaja}>
-          <input type='text' name='creditsText' onChange={handleChange} required/>
-          <label htmlFor=''>Credits Text</label>
+          <input type='text' name='creditsText' id='creditsText' onChange={handleChange} required/>
+          <label htmlFor='creditsText'>Credits Text</label>
         </div>
         {
           (errors.creditsText)? (
@@ -274,8 +278,8 @@ export default function FormRecipe () {
           )
         }
         <div className={styles.inputcaja}>
-          <textarea required name='summary' onChange={handleChange} id='' cols={30} rows={10}></textarea>
-          <label htmlFor=''>Summary</label>
+          <textarea required name='summary' onChange={handleChange} id='summary' cols={30} rows={10}></textarea>
+          <label htmlFor='summary'>Summary</label>
         </div>
         {
           (errors.summary)? (
@@ -285,8 +289,8 @@ export default function FormRecipe () {
           )
         }
         <div className={styles.inputcaja}>
-          <textarea required name='ingredients' onChange={handleChange} id='' cols={30} rows={10}></textarea>
-          <label htmlFor=''>Ingredients</label>
+          <textarea required name='ingredients' onChange={handleChange} id='ingredients' cols={30} rows={10}></textarea>
+          <label htmlFor='ingredients'>Ingredients</label>
         </div>
         {
           (errors.ingredients)? (
@@ -296,8 +300,8 @@ export default function FormRecipe () {
           )
         }
         <div className={styles.inputcaja}>
-          <textarea required name='instructions' onChange={handleChange} id='' cols={30} rows={10}></textarea>
-          <label htmlFor=''>Instructions</label>
+          <textarea required name='instructions' onChange={handleChange} id='instructions' cols={30} rows={10}></textarea>
+          <label htmlFor='instructions'>Instructions</label>
         </div>
         {
           (errors.instructions)? (

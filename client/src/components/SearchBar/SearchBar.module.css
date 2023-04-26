@@ -24,6 +24,7 @@
   border: 2px solid var(--verde);
   padding: .8rem 3rem;
   border-radius: 3em;
+  font-size: 1.2rem;
   background-color: transparent;
   color: #666;
   cursor: pointer;
@@ -45,7 +46,7 @@
   padding: .8rem 3rem;
   border-radius: 5rem;
   background: var(--degradado);
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: white;
   cursor: pointer;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
@@ -54,4 +55,13 @@
 
 .btn:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 450px) {
+  .btn {
+    font-size: 1.8rem;
+  }
+  .buttonValue {
+    font-size: 1.8rem;
+  }
 }

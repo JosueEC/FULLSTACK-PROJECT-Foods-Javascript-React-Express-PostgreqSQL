@@ -18,7 +18,11 @@ header .logo {
 }
 
 header .logo span {
-  color: var(--limon);
+  color: white;
+  background: var(--limon);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
 }
 
 /* ///////////////////////////////////////// */
@@ -29,6 +33,7 @@ header .navbar .link {
   color: var(--verde);
   padding: 7px 13px;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 header .navbar .link:hover {

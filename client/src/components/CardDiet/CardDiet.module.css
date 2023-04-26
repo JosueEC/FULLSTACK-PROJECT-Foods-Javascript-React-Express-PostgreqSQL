@@ -1,11 +1,13 @@
 .caja {
-  flex: 0 0 5rem;
+  /* flex: 1 1 30rem; */
+  width: 314px;
+  height: 340px;
   background: white;
   border-radius: .5rem;
   border: 0.1rem solid rgba(0,0,0,.2);
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
   margin: 1.5rem;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   border-radius: .5rem;
   text-align: left;
   animation: fadeIn 1s ease 0s 1 normal forwards;
@@ -25,16 +27,17 @@
 }
 
 .caja img {
-  height: 25rem;
+  /* height: 15rem; */
   border-radius: .5rem;
-  width: 312px;
-  height: 231px;
+  width: 280px;
+  height: 170px;
 }
 
 .caja h3 {
   font-size: 1.5rem;
   color: #333;
   padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .caja p {
