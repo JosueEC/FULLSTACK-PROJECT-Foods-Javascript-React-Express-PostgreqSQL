@@ -1,10 +1,11 @@
 import { React, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getRecipesQuery, getRecipes, filterRecipesDiet } from '../../redux/actions'
 
 import styles from './SearchBar.module.css'
 
 export default function SearchBar () {
+  const recipeQuery = useSelector(state => state.results.query)
   const dispatch = useDispatch();
   const [query, setQuery] = useState('');
 
@@ -20,6 +21,9 @@ export default function SearchBar () {
         break
       case 'btnAllRecipes':
         dispatch(getRecipes())
+        break
+      case 'btnAllRecipesQuery':
+        dispatch(getRecipesQuery(recipeQuery))
         break
       case 'btnGlutenFree':
         dispatch(filterRecipesDiet('gluten free'))
@@ -62,9 +66,14 @@ export default function SearchBar () {
       <div className={styles.searchContainer}>
         <input type='search' className={styles.searchInput} placeholder='Search recipe name here' onChange={ handleChange } />
         <button onClick={ handleClick } name='btnSearch' className={styles.btn}>Search</button>
+        <button className={styles.btn} onClick={handleClick} name='btnAllRecipes'>All Recipes</button>
       </div>
       <div className={styles.buttons}>
-        <button className={styles.buttonValue} onClick={handleClick} name='btnAllRecipes'>All Recipes</button>
+      {
+        (recipeQuery === 'All Recipes')
+          ? (<></>) 
+          : (<button className={styles.buttonValue} onClick={handleClick} name='btnAllRecipesQuery'>{(recipeQuery === 'All Recipes')?'All Recipes':`All ${recipeQuery} Recipes`}</button>)
+      }
         <button className={styles.buttonValue} onClick={handleClick} name='btnGlutenFree'>Gluten Free</button>
         <button className={styles.buttonValue} onClick={handleClick} name='btnKetogenic'>Ketogenic</button>
         <button className={styles.buttonValue} onClick={handleClick} name='btnVegetarian'>Vegetarian</button>
@@ -75,6 +84,7 @@ export default function SearchBar () {
         <button className={styles.buttonValue} onClick={handleClick} name='btnPrimal'>Primal</button>
         <button className={styles.buttonValue} onClick={handleClick} name='btnLowFoodmap'>Low food map</button>
         <button className={styles.buttonValue} onClick={handleClick} name='btnWhole'>Whole30</button>
+        <button className={styles.buttonValue} onClick={handleClick} name='btnWhole'></button>
       </div>
     </div>
   )
