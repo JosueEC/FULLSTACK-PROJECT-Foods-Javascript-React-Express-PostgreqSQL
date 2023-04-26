@@ -13,7 +13,7 @@ export default function CardDiet ({ id, title, image, diets }) {
         </div>
         <h3>{ title }</h3>
         {
-          diets && <p>Diets: { diets.join(', ') }</p>
+          diets && <p><i className='fa-solid fa-utensils'></i> Diets: { diets.join(', ') }</p>
         }
         {/* <Button textButton='More Details' /> */}
       </div>
